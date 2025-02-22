@@ -1,8 +1,5 @@
 
-resource "../modules/module-resource/"{
-  name     = "prueba1-resource-group"
-  location = var.location
-}
+
 
 resource "azurerm_virtual_network" "prueba1" {
   name                = "virtnetname"
