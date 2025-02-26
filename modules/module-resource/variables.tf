@@ -3,3 +3,7 @@ variable "location" {
   default = "west europe"
   
 }
+variable "name" {
+  type     = string
+   
+}
