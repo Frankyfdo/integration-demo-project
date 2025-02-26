@@ -138,6 +138,8 @@ Temporary Items
 *.tfstate
 .tfstate.
 .terraform.lock.
+.terraform.lock.hcl
+.terraform
 
 # Crash log files
 crash.log
