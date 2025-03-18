@@ -1,17 +1,16 @@
-
-resource "azurerm_virtual_network" "vnet"{
+ resource "azurerm_virtual_network" "vnet"{
   name                = var.name
-  address_space       = ["10.0.0.0/16"]
+  address_space       = local.address_space
   location            = var.location
-  resource_group_name = azurerm_resource_group.vnet.name
+  resource_group_name = azurerm_virtual_network.vnet.name
 }
 
-resource "azurerm_subnet" "prueba1" {
-  name                 = "subnetname"
-  resource_group_name  = azurerm_resource_group.prueba1.name
-  virtual_network_name = azurerm_virtual_network.prueba1.name
-  address_prefixes     = ["10.0.2.0/24"]
-  service_endpoints    = ["Microsoft.Sql", "Microsoft.Storage"]
+resource "azurerm_subnet" "subnet1" {
+  name                 = var.name
+  resource_group_name  = azurerm_resource_group.subnet1.name
+  virtual_network_name = azurerm_virtual_network.vnet.name
+  address_prefixes     = local.address_prefixes
+  
 }
 
   
